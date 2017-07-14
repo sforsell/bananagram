@@ -4,8 +4,10 @@ require 'sinatra'
 
 get '/sms-quickstart' do
   twiml = Twilio::TwiML::MessagingResponse.new do |r|
-    r.message(body: "New phone, who dis?",
-              media_url: "https://media.giphy.com/media/3o6ZtaZt380S8DlZjG/giphy.gif")
+    r.message do |message|
+        message.media("https://cdn.meme.am/cache/instances/folder944/500x/66491944.jpg")
+    end
   end
   twiml.to_s
 end
+

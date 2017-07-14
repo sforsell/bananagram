@@ -15,9 +15,10 @@ receiver = gets.chomp
 
 friends = {
 "+15623879191" => "Sara",
-# "+19145366151" => "Sofia",
-# "+12018159696" => "John",
-# "+18485655625" => "Steve"
+"+19145366151" => "Sofia",
+"+12018159696" => "John",
+"+18485655625" => "Steve"
+
 }
 
 
@@ -26,8 +27,8 @@ if receiver == "everyone"
     client.messages.create(
       from: from,
       to: key,
-      body: "Hey #{value}, #{message}"
-      # media_url: "http://rs255.pbsrc.com/albums/hh121/fgf284/Banana2.gif~c200"
+      body: "Hey #{value}, #{message}",
+      media_url: "http://rs255.pbsrc.com/albums/hh121/fgf284/Banana2.gif~c200"
     )
     puts "Sent message to #{value}"
   end
@@ -35,7 +36,8 @@ else
   client.messages.create(
     from: from,
     to: friends.key(receiver),
-    body: "Hey #{receiver}, #{message}"
+    body: "Hey #{receiver}, #{message}",
+    media_url: "http://rs255.pbsrc.com/albums/hh121/fgf284/Banana2.gif~c200"
     )
   puts "Sent message to #{receiver}"
 end
